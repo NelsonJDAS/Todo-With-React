@@ -16,6 +16,9 @@ i {
 
 #lista {
   border-top: 2px solid black;
+  height: 600px;
+  overflow-y: auto; /* Solo activa el scroll vertical */
+  overflow-x: hidden;
 }
 #contenedor-main {
   height: 1200px;
