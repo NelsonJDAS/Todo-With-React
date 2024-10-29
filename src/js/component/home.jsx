@@ -15,7 +15,8 @@ const Home = () => {
   const AgregarElemento = (elem) => {
     setElemento((prevElemento) => [...prevElemento, elem]);
     inputRef.current.value = "";
-    inputRef.current.placeholder = "Todo agregado";
+    inputRef.current.placeholder =
+      elem === "" ? "Ninguna tarea fue introducida" : "Todo agregado";
     setInput("");
   };
 
@@ -50,7 +51,10 @@ const Home = () => {
                 type="submit"
                 className="btn btn-outline-primary w-100 rounded-0 border-0 fw-bold"
                 onClick={() => {
-                  const valor = input.replace(/ /g, "");
+                  const valor =
+                    input.replace(/ /g, "") === ""
+                      ? input.replace(/ /g, "")
+                      : input;
                   AgregarElemento(valor);
                   console.log(valor);
                   valor === undefined || valor === ""
